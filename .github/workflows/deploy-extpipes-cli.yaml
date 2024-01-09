@@ -53,3 +53,4 @@ jobs:
                   config_file: ./config/extpipes/extpipes-cli-config.yml
             # "yes"|"no" deploy with special groups and aad_mappings
             #with_special_groups: "yes"
+            # extra comment
