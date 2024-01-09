@@ -4,8 +4,8 @@ name: deploy-extpipes-cli
 on:
     push:
         branches:
-            #- main
-            - none
+            - main
+            #- none
         paths:
             - config/extpipes/**
             - .github/workflows/deploy-extpipes-cli.yaml
