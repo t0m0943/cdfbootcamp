@@ -26,26 +26,38 @@ extpipe-pattern: '{source}:{short-name}:{rawtable-name}:{suffix}'
 
 # can contain multiple contacts, can be overwritten on pipeline level
 default-contacts:
-    - name: <Contact name>
-      email: <Contact email>
-      role: <Role name>
+    - name: thomas cobb
+      email: thomas.cobb@motiva.com
+      role: data engineering
       send-notification: true
 
 rawdbs:
   # list of raw-dbs > containing rawtables > containing pipelines
-    - rawdb-name: <node_name>:db
-      dataset-external-id: <node_name>:ds
-      short-name: <Short name for raw DB>
+    - rawdb-name: src:001:sap:db
+      dataset-external-id: src:001:sap:ds
+      short-name: sap
       rawtables:
-          - rawtable-name: <table name>
+          - rawtable-name: assets
             pipelines:
         # source is a short-name identifying the pipeline source being
         # a 'db-extractor (db)', an 'Azure Function (az-func)',
         # or 'Azure Data Factory (adf)', 'Python script (py)', ..
-                - source: <source type>
+                - source: csv
                   schedule: On trigger
                   contacts:
-                      - name: <Contact name>
-                        email: <Contact e-mail>
-                        role: <Contact role>
+                      - name: Thomas Cobb
+                        email: thomas.cobb@motiva.com
+                        role: bootcamp 30 admin
+                        send-notification: false
+          - rawtable-name: datapoints
+            pipelines:
+        # source is a short-name identifying the pipeline source being
+        # a 'db-extractor (db)', an 'Azure Function (az-func)',
+        # or 'Azure Data Factory (adf)', 'Python script (py)', ..
+                - source: ice-cream-api
+                  schedule: On trigger
+                  contacts:
+                      - name: Thomas Cobb
+                        email: thomas.cobb@motiva.com
+                        role: bootcamp 30 admin
                         send-notification: false
